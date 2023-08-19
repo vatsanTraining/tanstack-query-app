@@ -25,8 +25,37 @@ const AddAgent = () => {
     }
   })
 
+  const handldeSubmit = (event) =>{
+              event.preventDefault();
+
+              agentMutation.mutate({
+                name: nameref.current.value,
+                phone:phoneref.current.value
+              })
+  }
+
   return (
-    <div>AddAgent</div>
+    <div>
+      <h2>Add Agent</h2>
+
+      <form onSubmit={handldeSubmit}>
+
+        <div><label>Name</label>
+         <input type="text" name="name" ref={nameref}/>
+         </div>
+        <div>
+          <label>Phone Number</label>
+          <input type="text" name="phone" ref={phoneref}/></div>
+
+        <div>
+          <button disabled={agentMutation.isLoading}>
+            {agentMutation.isLoading?"Loading":"Create"}
+          </button>
+        </div>
+
+      </form>
+
+    </div>
   )
 }
 
