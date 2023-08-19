@@ -9,8 +9,8 @@ const AgentLayout = () => {
   return (
     <div>
         <QueryClientProvider client={queryClient}>
+          <AddAgent></AddAgent>
             <FetchAgents/>
-            <AddAgent/>
        </QueryClientProvider>
     </div>
   )

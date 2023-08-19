@@ -4,7 +4,7 @@ import axios from 'axios'
 
 const createAgent = async({name,phone}) =>{
 
-  response = await axios.post("http://localhost:5050/agents",{
+  const response = await axios.post("http://localhost:5000/agents",{
     name:name,
     phone:phone,
     id:Date.now()
@@ -13,8 +13,8 @@ const createAgent = async({name,phone}) =>{
 }
 
 const AddAgent = () => {
-  const name = useRef();
-  const phone = useRef();
+  const nameRef = useRef();
+  const phoneRef = useRef();
 
   const queryClient = useQueryClient();
 
@@ -22,6 +22,7 @@ const AddAgent = () => {
     mutationFn:createAgent,
     onSuccess: data =>{
       queryClient.setQueryData(["agents",data.id],data)
+      queryClient.invalidateQueries(['agents'],{exact:true})
     }
   })
 
@@ -29,8 +30,8 @@ const AddAgent = () => {
               event.preventDefault();
 
               agentMutation.mutate({
-                name: nameref.current.value,
-                phone:phoneref.current.value
+                name: nameRef.current.value,
+                phone:phoneRef.current.value
               })
   }
 
@@ -41,11 +42,11 @@ const AddAgent = () => {
       <form onSubmit={handldeSubmit}>
 
         <div><label>Name</label>
-         <input type="text" name="name" ref={nameref}/>
+         <input type="text" name="name" ref={nameRef}/>
          </div>
         <div>
           <label>Phone Number</label>
-          <input type="text" name="phone" ref={phoneref}/></div>
+          <input type="text" name="phone" ref={phoneRef}/></div>
 
         <div>
           <button disabled={agentMutation.isLoading}>

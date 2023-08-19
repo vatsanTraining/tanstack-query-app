@@ -1,7 +1,7 @@
 import React from 'react'
 import {useQuery,useQueryClient} from '@tanstack/react-query'
 import axios from 'axios'
-
+import AddAgent from './AddAgent'
 
 const FetchAgents = () => {
 
@@ -18,12 +18,14 @@ const FetchAgents = () => {
         queryKey:['agents']
         
     })
+    const queryClient = useQueryClient();
 
 
     if(agentQuery.status === 'loading') return <p>Loading...</p>
     if(agentQuery.status==='error') return <p>stringify(agentQuery.error))</p>
   return (
     <div>
+
         <ul style={{"listStyle":'none'}}>
            { agentQuery.data.map((agent,idx)=><li key={idx}>{agent.name}{agent.phone}</li> )}
         </ul>
