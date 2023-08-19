@@ -12,7 +12,6 @@ const FetchAgents = () => {
         return response.data
     }
 
-    const queryClient = useQueryClient()
 
     const agentQuery = useQuery({
         queryFn: getAgents,
