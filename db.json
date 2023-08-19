@@ -1,0 +1,92 @@
+{
+  "agents": [
+    {
+      "id": 101,
+      "name": "raj",
+      "phone": 4500223
+    },
+    {
+      "id": 102,
+      "name": "kumar",
+      "phone": 5500223
+    },
+    {
+      "name": "ramesh",
+      "phone": "28338",
+      "id": 1692375250481
+    },
+    {
+      "name": "ramesh",
+      "phone": "28338",
+      "id": 1692375257674
+    },
+    {
+      "name": "siva",
+      "phone": "29239",
+      "id": 1692375324551
+    }
+  ],
+  "customers": [
+    {
+      "id": 1,
+      "customerName": "Ramesh",
+      "email": "ram@abc.com",
+      "dateOfBirth": "2023-01-10"
+    }
+  ],
+  "enquiry": [
+    {
+      "id": 1,
+      "customerName": "Ramesh",
+      "interest": "kashmir"
+    },
+    {
+      "id": "45",
+      "customerName": "Shiva",
+      "phoneNumber": "2239",
+      "interest": "Simla"
+    }
+  ],
+  "payments": [
+    {
+      "id": 1,
+      "txnId": 1120120,
+      "customerName": "ramesh",
+      "tourcode": "KA0923",
+      "txnDate": "2023-01-20",
+      "txnAmount": 4500
+    },
+    {
+      "id": 2,
+      "txnId": 2110120,
+      "customerName": "suresh",
+      "tourcode": "BA0923",
+      "txnDate": "2023-01-20",
+      "txnAmount": 4500
+    },
+    {
+      "id": 3,
+      "txnId": 6720120,
+      "customerName": "anand",
+      "tourcode": "SI2923",
+      "txnDate": "2023-01-20",
+      "txnAmount": 4500
+    },
+    {
+      "id": 4,
+      "txnId": 990120,
+      "customerName": "vikas",
+      "tourcode": "MA0423",
+      "txnDate": "2023-01-20",
+      "txnAmount": 4500
+    },
+    {
+      "id": 5,
+      "txnId": 84820120,
+      "customerName": "basker",
+      "tourcode": "US0523",
+      "txnDate": "2023-01-20",
+      "txnAmount": 4500
+    }
+  ]
+}
