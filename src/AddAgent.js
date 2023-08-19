@@ -2,16 +2,7 @@ import React ,{useRef} from 'react'
 import { useMutation,useQueryClient } from '@tanstack/react-query'
 import axios from 'axios'
 
-
-const createAgent = async({name,phone}) =>{
-
-  const response = await axios.post("http://localhost:5000/agents",{
-    name:name,
-    phone:phone,
-    id:Date.now()
-  })
-  return response.data
-}
+import { createAgent } from './api'
 
 const AddAgent = () => {
   const nameRef = useRef();
