@@ -1,5 +1,7 @@
 import React from 'react'
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+
 import FetchAgents from './FetchAgents'
 import AddAgent from './AddAgent';
 const AgentLayout = () => {
@@ -11,6 +13,8 @@ const AgentLayout = () => {
         <QueryClientProvider client={queryClient}>
           <AddAgent></AddAgent>
             <FetchAgents/>
+            <ReactQueryDevtools initialIsOpen={true} />
+
        </QueryClientProvider>
     </div>
   )

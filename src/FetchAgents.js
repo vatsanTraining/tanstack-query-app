@@ -15,14 +15,18 @@ const FetchAgents = () => {
 
     const agentQuery = useQuery({
         queryFn: getAgents,
-        queryKey:['agents']
+        queryKey:['agents'],
+        refetchInterval: 65000,
+        staleTime:1000 * 60 * 5
+  
+
         
     })
     const queryClient = useQueryClient();
 
 
     if(agentQuery.status === 'loading') return <p>Loading...</p>
-    if(agentQuery.status==='error') return <p>stringify(agentQuery.error))</p>
+    if(agentQuery.status==='error') return <p>{JSON.stringify(agentQuery.error)}</p>
   return (
     <div>
 
